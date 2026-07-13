@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Profile Section</title>
+  <!-- NOTE: Everything inside this file can be copied directly into an Elementor HTML widget -->
+  <style>
+    /* Scope styles to the specific section to prevent conflicts */
+    .company-profile-section {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+      margin: 20px auto;
+      border: 1px solid #f0f0f0;
+      position: relative;
+      /* Max width optional, mainly so it doesn't stretch infinitely on ultra-wide */
+      max-width: 1920px; 
+    }
+
+    /* Sticky Header */
+    .cp-sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .cp-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .cp-header-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cp-header-text h2 {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    .cp-header-text p {
+      margin: 6px 0 0 0;
+      color: #666;
+      font-size: 1rem;
+    }
+
+    /* Grid Layout for Content */
+    .cp-content-grid {
+      display: grid;
+      gap: 24px;
+      padding: 32px;
+      /* 1 column layout for 375px and general mobile */
+      grid-template-columns: 1fr;
+    }
+
+    /* 2 columns at 768px */
+    @media (min-width: 768px) {
+      .cp-content-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* 3 columns at 1440px */
+    @media (min-width: 1440px) {
+      .cp-content-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Accordion Item Styles */
+    .cp-accordion {
+      background: #fafafa;
+      border-radius: 10px;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      height: max-content; /* Ensure the accordion doesn't stretch unnecessarily inside grid */
+    }
+
+    .cp-accordion:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-color: #d1d5db;
+      background: #ffffff;
+    }
+
+    .cp-accordion-header {
+      width: 100%;
+      padding: 20px 24px;
+      background: transparent;
+      border: none;
+      text-align: left;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #111827;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      outline: none;
+    }
+
+    /* Accordion Icon (+ / x) */
+    .cp-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f3f4f6;
+      color: #3b82f6;
+      font-size: 1.25rem;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .cp-accordion.active .cp-icon {
+      transform: rotate(45deg); /* Turns the + into an x */
+      background: #3b82f6;
+      color: #ffffff;
+    }
+
+    /* Accordion Content Wrapper */
+    .cp-accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Accordion Inner Content */
+    .cp-accordion-inner {
+      padding: 0 24px 24px 24px;
+      color: #4b5563;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .cp-accordion-inner hr {
+      border: 0;
+      height: 1px;
+      background: #e5e7eb;
+      margin: 16px 0;
+    }
+
+    .cp-placeholder-img {
+      width: 100%;
+      height: 160px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 16px;
+      background-color: #e5e7eb;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Wrapper class for Elementor isolation -->
+  <div class="company-profile-section" id="cp-section-wrapper">
+    
+    <!-- Sticky Header -->
+    <div class="cp-sticky-header">
+      <img src="https://via.placeholder.com/100x100.png?text=Logo" alt="Company Logo" class="cp-logo">
+      <div class="cp-header-text">
+        <h2>Acme Corporation</h2>
+        <p>Innovating the future, today.</p>
+      </div>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="cp-content-grid">
+      
+      <!-- Accordion 1: Overview -->
+      <div class="cp-accordion active"> <!-- "active" class opens it by default if desired -->
+        <button class="cp-accordion-header" aria-expanded="true">
+          Overview 
+          <span class="cp-icon">+</span>
+        </button>
+        <div class="cp-accordion-content">
+          <div class="cp-accordion-inner">
+            <img src="https://via.placeholder.com/400x200.png?text=Headquarters" alt="Headquarters" class="cp-placeholder-img">
+            <p><strong>About Us:</strong> Acme Corp is a leading provider of innovative placeholder solutions. Established in 2024, our mission is to empower developers with semantic, lightweight, and clean structures.</p>
+            <hr>
+            <p><strong>Vision:</strong> To become the global leader in blank canvas components, making the web a seamlessly responsive environment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion 2: Financials -->
+      <div class="cp-accordion">
+        <button class="cp-accordion-header" aria-expanded="false">
+          Financials 
+          <span class="cp-icon">+</span>
+        </button>
+        <div class="cp-accordion-content">
+          <div class="cp-accordion-inner">
+            <p><strong>Q3 Revenue:</strong> $4.2M (Up 12% YoY)</p>
+            <p><strong>Operating Margin:</strong> 24%</p>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+            <img src="https://via.placeholder.com/400x200.png?text=Chart" alt="Financial Chart" class="cp-placeholder-img" style="margin-top: 16px; margin-bottom: 0;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion 3: Employees -->
+      <div class="cp-accordion">
+        <button class="cp-accordion-header" aria-expanded="false">
+          Employees 
+          <span class="cp-icon">+</span>
+        </button>
+        <div class="cp-accordion-content">
+          <div class="cp-accordion-inner">
+            <p><strong>Total Headcount:</strong> 342</p>
+            <p><strong>Key Departments:</strong></p>
+            <ul style="margin: 8px 0; padding-left: 20px;">
+              <li>Engineering & Product</li>
+              <li>Sales & Marketing</li>
+              <li>Customer Success</li>
+            </ul>
+            <hr>
+            <p>We believe in a diverse, remote-first culture that brings the best talent from around the globe.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Self-invoking function to avoid global scope pollution
+    (function() {
+      const initAccordions = () => {
+        const wrapper = document.getElementById('cp-section-wrapper');
+        if (!wrapper) return;
+        
+        const accordions = wrapper.querySelectorAll('.cp-accordion');
+
+        accordions.forEach(acc => {
+          const header = acc.querySelector('.cp-accordion-header');
+          const content = acc.querySelector('.cp-accordion-content');
+          
+          // Initial setup for default open accordion
+          if (acc.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+
+          // Replace header to clean up potential duplicate event listeners if script runs multiple times in Elementor editor
+          const newHeader = header.cloneNode(true);
+          header.parentNode.replaceChild(newHeader, header);
+
+          newHeader.addEventListener('click', () => {
+            const isActive = acc.classList.toggle('active');
+            newHeader.setAttribute('aria-expanded', isActive);
+            
+            if (isActive) {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+              content.style.maxHeight = "0px";
+            }
+          });
+        });
+      };
+
+      // Run immediately
+      initAccordions();
+      
+      // Safety fallback for CMS page builders if DOM isn't fully ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAccordions);
+      }
+    })();
+  </script>
+
+</body>
+</html>

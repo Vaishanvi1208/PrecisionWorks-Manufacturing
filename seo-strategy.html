@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Strategy 2026 — PrecisionWorks Manufacturing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #1a5276;
+    --primary-light: #2471a3;
+    --accent: #e67e22;
+    --accent-light: #f5cba7;
+    --dark: #1c2833;
+    --text: #2c3e50;
+    --text-light: #5d6d7e;
+    --bg: #ffffff;
+    --bg-alt: #f8f9fa;
+    --border: #d5dbdb;
+  }
+
+  html { font-size: 14px; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .document {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 24px 28px;
+  }
+
+  /* ── Header ─────────────────────────────────── */
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+  .doc-header h1 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.3px;
+  }
+  .doc-header .subtitle {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 3px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── Section ────────────────────────────────── */
+  .section { margin-bottom: 14px; }
+  .section-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-left: 4px solid var(--accent);
+    padding-left: 8px;
+    margin-bottom: 6px;
+  }
+  .section-body { padding-left: 2px; }
+
+  /* ── Two-column layout ──────────────────────── */
+  .cols { display: flex; gap: 18px; }
+  .cols > * { flex: 1; min-width: 0; }
+
+  /* ── Keyword chips ──────────────────────────── */
+  .kw-group-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    margin-bottom: 3px;
+  }
+  .kw-list { list-style: none; margin-bottom: 6px; }
+  .kw-list li {
+    display: inline-block;
+    font-size: 0.73rem;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 7px;
+    margin: 1.5px 2px;
+    color: var(--text);
+  }
+  .kw-list.primary li {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    font-weight: 600;
+  }
+
+  /* ── Tables ─────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.73rem;
+    margin-top: 4px;
+  }
+  th {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 4px 6px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  td {
+    padding: 3.5px 6px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--bg-alt); }
+
+  /* ── Compact list ───────────────────────────── */
+  .compact-list {
+    list-style: none;
+    font-size: 0.73rem;
+  }
+  .compact-list li {
+    padding: 1.5px 0;
+    padding-left: 12px;
+    position: relative;
+  }
+  .compact-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ── Roadmap timeline ───────────────────────── */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    margin-top: 5px;
+  }
+  .rm-item {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--primary);
+    border-radius: 3px;
+    padding: 4px 5px;
+    font-size: 0.65rem;
+    line-height: 1.35;
+  }
+  .rm-item .rm-month {
+    font-weight: 700;
+    font-size: 0.67rem;
+    color: var(--primary);
+    margin-bottom: 2px;
+  }
+  .rm-item:nth-child(even) { border-top-color: var(--accent); }
+  .rm-item:nth-child(even) .rm-month { color: var(--accent); }
+
+  /* ── KPI boxes ──────────────────────────────── */
+  .kpi-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .kpi-box {
+    flex: 1;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px 4px;
+  }
+  .kpi-box .kpi-val {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--accent);
+  }
+  .kpi-box .kpi-label {
+    font-size: 0.62rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+  }
+
+  /* ── Tag / badge ────────────────────────────── */
+  .tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 0px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .tag-info { background: #d6eaf8; color: #1a5276; }
+  .tag-compare { background: #fdebd0; color: #b9770e; }
+  .tag-edu { background: #d5f5e3; color: #1e8449; }
+  .tag-comm { background: #fadbd8; color: #a93226; }
+
+  /* ── Subsection label ───────────────────────── */
+  .sub-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 5px 0 2px;
+  }
+
+  /* ── Inline code / highlight ────────────────── */
+  code {
+    font-family: 'Inter', monospace;
+    font-size: 0.7rem;
+    background: var(--bg-alt);
+    padding: 0px 4px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+  }
+
+  .small-text {
+    font-size: 0.68rem;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+
+  /* ── Page break helper ──────────────────────── */
+  .page-break { page-break-before: always; }
+
+  /* ── Footer ─────────────────────────────────── */
+  .doc-footer {
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    color: var(--text-light);
+  }
+
+  /* ════════════════════════════════════════════════
+     PRINT STYLES
+     ════════════════════════════════════════════════ */
+  @media print {
+    @page {
+      size: A4;
+      margin: 12mm 14mm 14mm 14mm;
+    }
+    @page:first { margin-top: 10mm; }
+
+    html { font-size: 13px; }
+    body { background: none; }
+    .document { max-width: none; padding: 0; }
+
+    .doc-header { border-bottom-width: 2px; }
+    .doc-header .subtitle {
+      background: none !important;
+      color: var(--accent) !important;
+      border: 1.5px solid var(--accent);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    th {
+      background: var(--primary) !important;
+      color: #fff !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    tr:nth-child(even) td { background: none !important; }
+
+    .kw-list.primary li {
+      background: none !important;
+      color: var(--primary) !important;
+      border: 1.5px solid var(--primary);
+      font-weight: 700;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .kw-list li {
+      background: none !important;
+    }
+
+    .rm-item {
+      background: none !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .rm-item { border-top-width: 2px; }
+
+    .kpi-box .kpi-val {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .tag {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .doc-footer { display: none; }
+
+    /* Print page counter */
+    body { counter-reset: page-num; }
+    .page-marker {
+      display: block;
+      text-align: right;
+      font-size: 0.6rem;
+      color: #aaa;
+    }
+
+    .page-break { page-break-before: always; }
+    .section { break-inside: avoid; }
+  }
+
+  @media screen {
+    .page-marker { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="document">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="doc-header">
+    <h1>PrecisionWorks Manufacturing</h1>
+    <span class="subtitle">SEO Strategy 2026</span>
+  </header>
+
+  <!-- ═══ 1. TARGET KEYWORDS ═══ -->
+  <section class="section">
+    <div class="section-title">1 &nbsp;Target Keywords</div>
+    <div class="section-body">
+      <div class="kw-group-label">Primary Keywords</div>
+      <ul class="kw-list primary">
+        <li>precision manufacturing components</li>
+        <li>custom machined parts</li>
+      </ul>
+      <div class="kw-group-label">Long-Tail Keywords</div>
+      <ul class="kw-list">
+        <li>custom X-Y rail systems manufacturer</li>
+        <li>precision gear manufacturing services</li>
+        <li>CNC machined cam components</li>
+        <li>industrial linear motion systems</li>
+        <li>custom precision components supplier</li>
+        <li>high-precision gear cutting services</li>
+        <li>mechanical cam design and manufacturing</li>
+        <li>OEM precision parts manufacturer</li>
+        <li>tight-tolerance CNC milling services</li>
+        <li>custom linear guide rail assemblies</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ 2. ON-PAGE SEO ═══ -->
+  <section class="section">
+    <div class="section-title">2 &nbsp;On-Page SEO</div>
+    <div class="section-body">
+      <div class="sub-label">Title Tag Template</div>
+      <p class="small-text"><code>[Product] | PrecisionWorks Manufacturing — Precision Engineered Components</code></p>
+
+      <div class="sub-label">Heading Hierarchy</div>
+      <p class="small-text">H1: One per page — product/service name. H2: Feature categories (Specifications, Applications, Materials). H3: Individual specs or sub-features. Keep H1 under 60 characters; include primary keyword naturally.</p>
+
+      <table>
+        <thead>
+          <tr><th>Page</th><th>Meta Description (≤155 chars)</th><th>Alt Text Example</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>X-Y Rail Systems</strong></td>
+            <td>High-precision X-Y rail systems engineered for industrial automation. Custom stroke lengths, tight tolerances &amp; fast lead times from PrecisionWorks.</td>
+            <td>PrecisionWorks X-Y linear rail system with hardened steel guides mounted on CNC base plate</td>
+          </tr>
+          <tr>
+            <td><strong>Gears</strong></td>
+            <td>Custom spur, helical &amp; bevel gears manufactured to AGMA standards. Precision gear cutting in steel, brass &amp; engineered plastics. Request a quote today.</td>
+            <td>Close-up of precision-cut helical gear showing tooth profile and surface finish</td>
+          </tr>
+          <tr>
+            <td><strong>Cams</strong></td>
+            <td>Precision cam components for high-speed machinery — CNC machined profiles with ±0.001″ tolerances. Design assistance &amp; prototyping available.</td>
+            <td>CNC-machined steel cam component with polished lobe surface for high-speed actuator</td>
+          </tr>
+          <tr>
+            <td><strong>Custom Components</strong></td>
+            <td>OEM precision components machined to your specifications. Multi-axis CNC milling &amp; turning, from prototype to production. ISO 9001 certified facility.</td>
+            <td>Array of custom CNC-machined precision components in aluminum and stainless steel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══ 3. TECHNICAL SEO ═══ -->
+  <section class="section">
+    <div class="section-title">3 &nbsp;Technical SEO</div>
+    <div class="section-body cols">
+      <div>
+        <div class="sub-label">Core Web Vitals</div>
+        <ul class="compact-list">
+          <li>LCP &lt; 2.5 s — optimize hero images (WebP, lazy-load below fold)</li>
+          <li>FID &lt; 100 ms — defer non-critical JS, minimize main-thread work</li>
+          <li>CLS &lt; 0.1 — set explicit width/height on all media elements</li>
+        </ul>
+        <div class="sub-label">Crawlability &amp; Indexing</div>
+        <ul class="compact-list">
+          <li>XML sitemap at <code>/sitemap.xml</code> — auto-update on publish</li>
+          <li><code>robots.txt</code> — allow all product pages, block /admin, /staging</li>
+          <li>Canonical tags on every page to prevent duplicate content</li>
+          <li>Self-referencing canonicals on paginated catalog pages</li>
+        </ul>
+      </div>
+      <div>
+        <div class="sub-label">Structured Data</div>
+        <ul class="compact-list">
+          <li><strong>Organization</strong> schema — name, logo, contact, social profiles</li>
+          <li><strong>Product</strong> schema on each product page — name, description, image, SKU, brand</li>
+          <li><strong>LocalBusiness</strong> schema — address, geo-coordinates, hours</li>
+          <li><strong>FAQPage</strong> schema on pillar pages for rich snippets</li>
+        </ul>
+        <div class="sub-label">Performance &amp; Security</div>
+        <ul class="compact-list">
+          <li>HTTPS site-wide with HSTS header enabled</li>
+          <li>Mobile-first responsive design — test at 360 px breakpoint</li>
+          <li>Image compression pipeline: max 100 KB per image, WebP + fallback</li>
+          <li>Enable Brotli compression; set browser cache to 1 year for static assets</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. CONTENT PLAN ═══ -->
+  <section class="section">
+    <div class="section-title">4 &nbsp;Content Plan</div>
+    <div class="section-body">
+      <div class="sub-label">Pillar Pages (Evergreen, 2,000+ words each)</div>
+      <ul class="compact-list">
+        <li><strong>Complete Guide to Linear Motion Systems</strong> — covers rail types, selection criteria, maintenance, and application case studies</li>
+        <li><strong>Precision Gear Manufacturing: Materials, Methods &amp; Applications</strong> — gear types, cutting processes, material properties, industry applications</li>
+        <li><strong>Custom CNC Machining for Industrial Components</strong> — tolerances, multi-axis capabilities, prototyping workflow, quality assurance</li>
+      </ul>
+
+      <div class="sub-label" style="margin-top:6px;">Blog Topics (Supporting Content)</div>
+      <table>
+        <thead><tr><th style="width:55%">Title</th><th>Intent</th><th>Target Keyword Cluster</th></tr></thead>
+        <tbody>
+          <tr><td>How to Choose the Right X-Y Rail System for Your Application</td><td><span class="tag tag-info">Informational</span></td><td>X-Y rail systems, linear motion selection</td></tr>
+          <tr><td>Spur Gears vs Helical Gears: Which Is Right for Your Project?</td><td><span class="tag tag-compare">Comparison</span></td><td>spur gears, helical gears, gear types</td></tr>
+          <tr><td>5 Critical Factors in Cam Design for High-Speed Machinery</td><td><span class="tag tag-edu">Educational</span></td><td>cam design, high-speed cam components</td></tr>
+          <tr><td>Understanding CNC Tolerances: A Guide for Engineers</td><td><span class="tag tag-info">Informational</span></td><td>CNC tolerances, machining precision</td></tr>
+          <tr><td>Reducing Lead Times in Custom Precision Manufacturing</td><td><span class="tag tag-comm">Commercial</span></td><td>custom manufacturing lead times</td></tr>
+          <tr><td>Material Selection Guide for Precision Machined Components</td><td><span class="tag tag-edu">Educational</span></td><td>material selection, machined components</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══ PAGE BREAK ══ -->
+  <div class="page-break"></div>
+  <span class="page-marker"></span>
+
+  <!-- ═══ 5. BACKLINK IDEAS ═══ -->
+  <section class="section">
+    <div class="section-title">5 &nbsp;Backlink Strategy</div>
+    <div class="section-body cols">
+      <div>
+        <div class="sub-label">Industry Directories (DA 50+)</div>
+        <ul class="compact-list">
+          <li>ThomasNet — create manufacturer profile with full product catalog</li>
+          <li>GlobalSpec — list all product lines with technical specifications</li>
+          <li>Kompass — register with SIC/NAICS codes for discoverability</li>
+        </ul>
+        <div class="sub-label">Guest Content &amp; Thought Leadership</div>
+        <ul class="compact-list">
+          <li>Machine Design — pitch technical articles on linear motion innovation</li>
+          <li>Engineering.com — contribute to CNC machining resource library</li>
+          <li>Modern Machine Shop — case study on precision manufacturing process</li>
+          <li>Manufacturing Engineering (SME) — author feature on quality control</li>
+        </ul>
+      </div>
+      <div>
+        <div class="sub-label">Partnership &amp; Community Links</div>
+        <ul class="compact-list">
+          <li>Supplier cross-links — reciprocal links with material &amp; tooling vendors</li>
+          <li>Customer case studies — co-publish with OEM clients for mutual links</li>
+          <li>University engineering departments — sponsor capstone projects</li>
+          <li>Industry events — sponsor IMTS, Automate, FABTECH for event page links</li>
+          <li>Webinars — host technical webinars listed on engineering event aggregators</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. LOCAL SEO ═══ -->
+  <section class="section">
+    <div class="section-title">6 &nbsp;Local SEO</div>
+    <div class="section-body cols">
+      <div>
+        <div class="sub-label">Google Business Profile</div>
+        <ul class="compact-list">
+          <li>Claim &amp; verify GBP; select "Machine Shop" + "Manufacturer" categories</li>
+          <li>Upload facility photos, product images, and team photos monthly</li>
+          <li>Post weekly updates: new capabilities, certifications, projects completed</li>
+          <li>Enable messaging; respond to reviews within 24 hours</li>
+          <li>Embed Google Maps with schema-linked address on Contact page</li>
+        </ul>
+      </div>
+      <div>
+        <div class="sub-label">Citations &amp; Consistency</div>
+        <ul class="compact-list">
+          <li>Ensure NAP (Name, Address, Phone) is identical across all 40+ directories</li>
+          <li>Priority citations: Yelp, BBB, Manta, Yellow Pages, Hotfrog</li>
+          <li>Industry-specific: ThomasNet, MFG.com, IndustryNet, MacRAE'S</li>
+          <li>Add <code>LocalBusiness</code> schema with geo-coordinates to every page footer</li>
+          <li>Build city + service landing pages (e.g., "Precision CNC Machining in [City]")</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 7. KPIs & ROADMAP ═══ -->
+  <section class="section">
+    <div class="section-title">7 &nbsp;KPIs &amp; 6-Month Roadmap</div>
+    <div class="section-body">
+
+      <div class="kpi-row">
+        <div class="kpi-box">
+          <div class="kpi-val">+40%</div>
+          <div class="kpi-label">Organic Traffic Growth</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-val">Top 20</div>
+          <div class="kpi-label">Keyword Rankings</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-val">5+</div>
+          <div class="kpi-label">Quality Backlinks</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-val">+25%</div>
+          <div class="kpi-label">Form Submissions</div>
+        </div>
+      </div>
+
+      <div class="roadmap">
+        <div class="rm-item">
+          <div class="rm-month">Month 1</div>
+          Technical audit &amp; crawl error fixes. Set up GA4, GSC &amp; rank tracking. Benchmark current metrics.
+        </div>
+        <div class="rm-item">
+          <div class="rm-month">Month 2</div>
+          On-page optimization for all product pages. Implement structured data (Organization, Product, Local). Fix Core Web Vitals.
+        </div>
+        <div class="rm-item">
+          <div class="rm-month">Month 3</div>
+          Publish first pillar page. Launch bi-weekly blog cadence. Submit sitemap &amp; request indexing.
+        </div>
+        <div class="rm-item">
+          <div class="rm-month">Month 4</div>
+          Directory submissions &amp; link outreach campaign. GBP optimization &amp; local citations setup. Begin guest post pitches.
+        </div>
+        <div class="rm-item">
+          <div class="rm-month">Month 5</div>
+          Publish second pillar page. Continue link building &amp; guest posts. Optimize underperforming content based on data.
+        </div>
+        <div class="rm-item">
+          <div class="rm-month">Month 6</div>
+          Comprehensive KPI review. Publish third pillar page. Adjust keyword targets &amp; content calendar for H2 2026.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="doc-footer">
+    <span>PrecisionWorks Manufacturing — Confidential</span>
+    <span>Prepared July 2026 &nbsp;|&nbsp; SEO Strategy Document v1.0</span>
+  </footer>
+
+</div>
+</body>
+</html>
